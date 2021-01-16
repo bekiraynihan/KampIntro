@@ -18,6 +18,7 @@ namespace DegerVeReferansTipler
             int[] sayiler2 = { 100, 200, 300 };
             sayiler1 = sayiler2;
             sayiler2[0] = 999;
+
             sayiler1[0] = 123;
             Console.WriteLine(sayiler2[0]);
         }
