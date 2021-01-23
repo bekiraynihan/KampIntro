@@ -6,10 +6,13 @@ namespace Oop3
 {
     class RecourseManeger
     {
-        public void BasvuruYap(ICreditManeger creditManeger, ILoggerService loggerService) 
+        public void BasvuruYap(ICreditManeger creditManeger, List<ILoggerService> loggerService) 
         {
             creditManeger.Calculate();
-            loggerService.Log();
+            foreach (var log in loggerService)
+            {
+                log.Log();
+            }
         
         }
 

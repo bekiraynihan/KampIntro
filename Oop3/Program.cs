@@ -13,12 +13,16 @@ namespace Oop3
             //vehicleCreditManeger.Calculate();
             ICreditManeger housingCreditManeger = new HousingCreditManeger();
             //housingCreditManeger.Calculate();
-
+            
             ILoggerService FloggerService = new DateBaseLoggerSevice();
             ILoggerService DloggerService = new FileLoggerSevice();
 
+            List<ILoggerService> Liste = new List<ILoggerService>();
+            Liste.Add(FloggerService);
+            Liste.Add(DloggerService);
+
             RecourseManeger recourseManeger = new RecourseManeger();
-           recourseManeger.BasvuruYap(needCreditManeger,FloggerService);
+           recourseManeger.BasvuruYap(needCreditManeger,Liste);
             
             
             List<ICreditManeger> credits = new List<ICreditManeger>();
